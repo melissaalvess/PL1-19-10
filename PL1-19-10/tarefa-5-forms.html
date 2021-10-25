@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        p {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 30pt;
+        }
+        body{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Tarefa 5</title>
+    <script language="javascript">
+         function enviarDados()
+        {
+            var n1, n2, n3, n4, soma, media;
+            n1 = parseFloat(document.formSolicitaNumeros.txtN1.value);
+            n2 =  parseFloat(document.formSolicitaNumeros.txtN2.value);
+            n3 = parseFloat(document.formSolicitaNumeros.txtN3.value);
+            n4 = parseFloat(document.formSolicitaNumeros.txtN4.value);
+            soma = n1 + n2 + n3 + n4;
+            media = soma / 4;
+
+            document.getElementById("txtSaidaMedia").innerHTML = "A média aritmética foi de: " + media + " ";
+            
+        }
+    </script>
+</head>
+<body>
+       <form name = formSolicitaNumeros>
+        Digite o primeiro número:<input type = "text" name = txtN1><br>
+        Digite o segundo número:<input type = "text" name = txtN2><br>
+        Digite o terceiro número:<input type = "text" name = txtN3><br>
+        Digite o quarto número   :<input type = "text" name = txtN4><br><br>
+        <input type="button" value="Enviar" onclick="enviarDados();"">
+        <br><br>
+        </form>
+        <p id="txtSaidaMedia"></p>
+</body>    
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+        }
+
+        form {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: red;
+            font-size: 15pt;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+    <title>Exercicio 13- Forma um Triangulo?</title>
+    <script language="javascript">
+        function EnviarLados() {
+            var lado1, lado2, lado3;
+
+            lado1 = parseFloat(document.formLd.txtlado1.value);
+            lado2 = parseFloat(document.formLd.txtlado2.value);
+            lado3 = parseFloat(document.formLd.txtlado3.value);
+
+            if (
+                (lado2 + lado3) > lado1 &
+                (lado1 + lado3) > lado2 &
+                (lado1 + lado2) > lado3
+            ) {
+                document.getElementById("FormaTri").innerHTML = "<h2>Essas medidas podem formar o :</h1>";
+                {
+                    if (lado1 == lado2 & lado2 == lado3)
+                        document.getElementById("TriEql").innerHTML = "<h3>O Triângulo  Equilátero<br>"
+                            + "<img src='imagens/equilatero.png'width='300'height='200'></h3>";
+
+                    else if (lado1 == lado2 | lado2 == lado3 | lado1 == lado3)
+                        document.getElementById("TriIso").innerHTML = "<h3>O Triângulo  Isósceles<br>"
+                            + "<img src='imagens/isosceles.jpg'width='300'height='250'></h3>";
+                    else
+                        document.getElementById("TriEsc").innerHTML = "<h3>O Triângulo  Escaleno<br>"
+                            + "<img src='imagens/escaleno.png'width='300'height='200'></h3>";
+                }
+            }
+            else {
+                document.getElementById("NFormTri").innerHTML = "<h2>Essa medidas não formam um triângulo</h1>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h2>Verificar se forma um triângulo, e qual o tipo:</h2>
+        <form name="formLd">
+            Informe o 1° Lado :<input type="text" name="txtlado1"><br>
+            Informe o 2° Lado :<input type="text" name="txtlado2"><br>
+            Informe o 3° Lado :<input type="text" name="txtlado3"><br><br>
+            <input type="button" value="Enviar" onclick="EnviarLados();">
+
+        </form>
+        <hr>
+
+        <p id="FormaTri"></p>
+        <p id="NFormTri"></p>
+        <p id="TriEql"></p>
+        <p id="TriIso"></p>
+        <p id="TriEsc"></p>
+    </center>
+</body>
+
+</html>
